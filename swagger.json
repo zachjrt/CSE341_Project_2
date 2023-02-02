@@ -5,12 +5,19 @@
     "description": "API for maintenance requests",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-project2-zacht.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/requests/": {
       "get": {
         "description": "",
@@ -87,13 +94,6 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
       }
     }
   }
