@@ -42,10 +42,16 @@
                 "email": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "requestType": {
                   "example": "any"
                 },
-                "birthday": {
+                "description": {
+                  "example": "any"
+                },
+                "estimatedTime": {
+                  "example": "any"
+                },
+                "building": {
                   "example": "any"
                 }
               }
