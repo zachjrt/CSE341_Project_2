@@ -2,14 +2,14 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
+    title: 'Mainenance API',
     description: 'API for maintenance requests'
   },
   host: 'cse341-project2-zacht.onrender.com',
   schemes: ['https']
 };
 
-const outputFile = './swagger.json';
+const outputFile = './swaggerDesign.json';
 const endpointsFiles = ['./routes/index.js'];
 
 // generate swagger.json

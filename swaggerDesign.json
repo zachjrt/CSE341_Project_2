@@ -1,12 +1,22 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
+    "title": "Mainenance API",
     "description": "API for maintenance requests",
     "version": "1.0.0"
   },
   "host": "cse341-project2-zacht.onrender.com",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Workers",
+      "description": "requests related to workers"
+    },
+    {
+      "name": "Requests",
+      "description": "requests related to requests"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -20,6 +30,7 @@
     },
     "/requests/": {
       "get": {
+        "tags": ["Requests"],
         "description": "",
         "produces": [
           "application/json"
@@ -32,6 +43,7 @@
         }
       },
       "post": {
+        "tags": ["Requests"],
         "description": "",
         "parameters": [
           {
@@ -77,6 +89,7 @@
     },
     "/requests/{id}": {
       "get": {
+        "tags": ["Requests"],
         "description": "",
         "produces": [
           "application/json"
@@ -87,6 +100,95 @@
             "in": "path",
             "required": true,
             "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/workers/": {
+      "get": {
+        "tags": ["Workers"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+                }
+              }
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Workers"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/workers/{id}": {
+      "get": {
+        "tags": ["Workers"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get a specfic worker"
           }
         ],
         "responses": {
