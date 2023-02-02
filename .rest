@@ -1,10 +1,34 @@
 
 ### Local Host
+###Get
 GET http://localhost:3000/requests HTTP/1.1
 
 
-### Local Host
+###Get
+GET http://localhost:3000/requests/63dbdcc2e3050718b39529ce HTTP/1.1
+
+
+###Post
 POST http://localhost:3000/requests HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+}
+
+
+
+### Render
+###Get
+GET https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
+
+
+###Get
+GET https://cse341-project2-zacht.onrender.com/requests/63dbdcc2e3050718b39529ce HTTP/1.1
+
+
+###Post
+POST https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
 content-type: application/json
 
 {
