@@ -5,7 +5,7 @@
     "description": "API for maintenance requests",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-zacht.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "tags": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api-docs": {
@@ -113,28 +113,9 @@
       "get": {
         "tags": ["Workers"],
         "description": "",
+        "parameters": [],
         "produces": [
           "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                }
-                }
-              }
-            }
         ],
         "responses": {
           "200": {

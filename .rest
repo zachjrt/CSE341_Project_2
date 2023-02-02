@@ -1,15 +1,12 @@
 
-### Local Host
+### Local Host####
+###Requests
 ###Get
 GET http://localhost:3000/requests HTTP/1.1
-
-
 ###Get
 GET http://localhost:3000/requests/63dbdcc2e3050718b39529ce HTTP/1.1
 ###Get
 GET http://localhost:3000/api-docs HTTP/1.1
-
-
 ###Post
 POST http://localhost:3000/requests HTTP/1.1
 content-type: application/json
@@ -17,22 +14,41 @@ content-type: application/json
 {
     "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
 }
-
-
-
-### Render
+###workers
 ###Get
-GET https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
-
-
+GET http://localhost:3000/workers HTTP/1.1
 ###Get
-GET https://cse341-project2-zacht.onrender.com/requests/63dbdcc2e3050718b39529ce HTTP/1.1
-
-
+GET http://localhost:3000/workers/63dbdcc2e3050718b39529ce HTTP/1.1
 ###Post
-POST https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
+POST http://localhost:3000/workers HTTP/1.1
 content-type: application/json
 
 {
     "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+}
+
+
+### Render ####
+### Requests
+###Get
+GET https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
+###Get
+GET https://cse341-project2-zacht.onrender.com/requests/63dbdcc2e3050718b39529ce HTTP/1.1
+###Post
+POST https://cse341-project2-zacht.onrender.com/requests HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+}
+###workers
+###Get
+GET https://cse341-project2-zacht.onrender.com/workers HTTP/1.1
+###Get
+GET https://cse341-project2-zacht.onrender.com/workers/63dc0cf90b09faf4426d4d20 HTTP/1.1
+###Post
+POST https://cse341-project2-zacht.onrender.com/workers HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"RenderTest", "lastName":"Showstopper", "email":"tester@test.com"
 }
