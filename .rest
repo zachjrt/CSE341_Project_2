@@ -1,0 +1,12 @@
+
+### Local Host
+GET http://localhost:3000/requests HTTP/1.1
+
+
+### Local Host
+POST http://localhost:3000/requests HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+}

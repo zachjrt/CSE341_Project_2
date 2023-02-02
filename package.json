@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.0.0",
+    "swagger-json": "^2.0.0",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "name": "cse341_project_2",
+  "description": "Second Project for CSE341",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "swagger-autogen": "^2.23.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "swagger": "node ./swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachjrt/CSE341_Project_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachjrt/CSE341_Project_2/issues"
+  },
+  "homepage": "https://github.com/zachjrt/CSE341_Project_2#readme"
+}
