@@ -29,7 +29,7 @@ const saveRequest = (req, res, next) => {
       email: 'required|email',
       requestType: 'required|string',
       description: 'required|string',
-      estimatedTime: 'required|string',
+      estimatedTime: 'string',
       building: 'required|string',
 
     };
