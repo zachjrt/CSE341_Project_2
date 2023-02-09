@@ -21,15 +21,7 @@ const saveWorker = (req, res, next) => {
 };
 
 
-{
-    "firstName":"Jane", 
-    "lastName":"Worker",
-     "email":"tester@test.com", 
-     "requestType":"Maintenance", 
-     "description":"Ceiling tile collapsed onto desk need to investigate cause", 
-     "estimatedTime":"3 hours", 
-     "building":"Higgins Hall"
-}
+
 const saveRequest = (req, res, next) => {
     const validationRule = {
       firstName: 'required|string',
