@@ -75,6 +75,9 @@
                 },
                 "building": {
                   "example": "any"
+                },
+                "skillLevel": {
+                  "example": 1
                 }
               }
             }
@@ -153,6 +156,9 @@
                 },
                 "building": {
                   "example": "any"
+                },
+                "skillLevel": {
+                  "example": 1
                 }
               }
             }
@@ -226,6 +232,9 @@
                 },
                 "email": {
                   "example": "any"
+                },
+                "skillLevel": {
+                  "example": 1
                 }
               }
             }
@@ -293,6 +302,9 @@
                 },
                 "email": {
                   "example": "any"
+                },
+                "skillLevel": {
+                  "example": 1
                 }
               }
             }
