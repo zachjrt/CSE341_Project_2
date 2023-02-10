@@ -6,7 +6,7 @@ const saveWorker = (req, res, next) => {
     firstName: 'required|string',
     lastName: 'required|string',
     email: 'required|email',
-    skillLevel: 'required|max:5'
+    skillLevel: 'required|integer'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -32,7 +32,7 @@ const saveRequest = (req, res, next) => {
       description: 'required|string',
       estimatedTime: 'string',
       building: 'required|string',
-      skillLevel: 'required|max:5'
+      skillLevel: 'required|integer'
     };
     validator(req.body, validationRule, {}, (err, status) => {
       if (!status) {
