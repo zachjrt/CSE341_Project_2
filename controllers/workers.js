@@ -32,7 +32,8 @@ const createWorker = async (req, res, next) => {
     const userFirstName = req.body.firstName;
     const userLastName = req.body.lastName;
     const userEmail = req.body.email;
-    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail};
+    const userLevel = req.body.skillLevel
+    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'skillLevel' : userLevel};
     //Operation
     const result = await mongodb.getDb().db().collection('workers')
                         .insertOne(userData);
@@ -55,7 +56,8 @@ const createWorker = async (req, res, next) => {
     const userFirstName = req.body.firstName;
     const userLastName = req.body.lastName;
     const userEmail = req.body.email;
-    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail};
+    const userLevel = req.body.skillLevel
+    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'skillLevel' : userLevel};
     //Operation
     const result = await mongodb.getDb().db().collection('workers')
             .replaceOne({ _id: userId }, userData);

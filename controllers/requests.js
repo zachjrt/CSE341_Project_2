@@ -34,7 +34,8 @@ const createRequest = async (req, res, next) => {
     const userDescription = req.body.description;
     const userEstimatedTime = req.body.estimatedTime;
     const userBuilding = req.body.building;
-    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'requestType':userRequest, 'description':userDescription, 'estimatedTime':userEstimatedTime, 'building':userBuilding};
+    const userLevel = req.body.skillLevel
+    const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'requestType':userRequest, 'description':userDescription, 'estimatedTime':userEstimatedTime, 'building':userBuilding, 'skillLevel' : userLevel};
     //Operation
     const result = await mongodb.getDb().db().collection('requests')
                         .insertOne(userData);
@@ -61,7 +62,8 @@ const updateRequest = async (req, res, next) => {
   const userDescription = req.body.description;
   const userEstimatedTime = req.body.estimatedTime;
   const userBuilding = req.body.building;
-  const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'requestType':userRequest, 'description':userDescription, 'estimatedTime':userEstimatedTime, 'building':userBuilding};
+  const userLevel = req.body.skillLevel
+  const userData = {'firstName':userFirstName, 'lastName':userLastName, 'email':userEmail, 'requestType':userRequest, 'description':userDescription, 'estimatedTime':userEstimatedTime, 'building':userBuilding, 'skillLevel' : userLevel};
   //Operation
   const result = await mongodb.getDb().db().collection('requests')
             .replaceOne({ _id: userId }, userData);

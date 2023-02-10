@@ -12,7 +12,7 @@ POST http://localhost:3000/requests HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall", "skillLevel" : 3
 }
 ###workers
 ###Get
@@ -24,7 +24,7 @@ POST http://localhost:3000/workers HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "requestType":"Maintenance", "description":"Ceiling tile collapsed onto desk need to investigate cause", "estimatedTime":"3 hours", "building":"Higgins Hall"
+    "firstName":"Jane", "lastName":"Worker", "email":"tester@test.com", "skillLevel" : 3
 }
 
 
