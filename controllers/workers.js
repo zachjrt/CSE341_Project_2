@@ -3,6 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 //Get all
 const getWorkers = async (req, res, next) => {
+  try {
     mongodb.getDb().db().collection('workers').find().toArray((err, lists) => {
       if (err){
         res.status(400).json({message: err});
@@ -10,10 +11,14 @@ const getWorkers = async (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
     });
+  } catch (err){
+    res.status(500).json(err);
+  }
   };
   
   //GET one based on id
   const getWorker = async (req, res, next) => {
+    try {
      //  #swagger.parameters['id'] = { description: 'Get a specfic worker' }
     const userId = new ObjectId(req.params.id);
     mongodb.getDb().db().collection('workers').find({ _id: userId }).toArray((err, result) => {
@@ -23,11 +28,14 @@ const getWorkers = async (req, res, next) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(result[0]);
     });
+  } catch (err){
+    res.status(500).json(err);
+  }
   };
 
   //Post
 const createWorker = async (req, res, next) => {
-  
+  try {
     //Data to be added
     const userFirstName = req.body.firstName;
     const userLastName = req.body.lastName;
@@ -46,10 +54,14 @@ const createWorker = async (req, res, next) => {
     }
     //console confirmation
     console.log(`${result.modifiedCount} document(s) was/were created.`);
+  } catch (err){
+    res.status(500).json(err);
+  }
   };
 
   //Put
   const updateWorker = async (req, res, next) => {
+    try {
     //ID
     const userId = new ObjectId(req.params.id);
     //Data to be added
@@ -70,10 +82,14 @@ const createWorker = async (req, res, next) => {
     }
     //console confirmation
     console.log(`${result.modifiedCount} document(s) was/were created.`);
+  } catch (err){
+    res.status(500).json(err);
+  }
   };
 
   //Delete
   const deleteWorker = async (req, res, next) => {
+    try {
     //ID to delete
     //Request param switch to req.body
     const userId = new ObjectId(req.params.id);
@@ -86,7 +102,10 @@ const createWorker = async (req, res, next) => {
     } else {
       res.status(500).json(result.error || 'Some error occurred while deleting the contact.');
     }
+  } catch (err){
+    res.status(500).json(err);
   }
+  };
   
 
   module.exports = { getWorkers, getWorker, createWorker, updateWorker, deleteWorker };
