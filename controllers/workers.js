@@ -1,6 +1,8 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
+//Added try catch Blocks
+
 //Get all
 const getWorkers = async (req, res, next) => {
   try {
