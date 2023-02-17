@@ -44,6 +44,7 @@ app
       .catch((err) => res.status(500).json({ err: err.message }));
   });
 
+
 mongodb.initDb((err, mongodb) => {
   if (err) {
     console.log(err);
