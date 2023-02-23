@@ -4,12 +4,24 @@ const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 const routes = require('./routes');
+//const session = require('express-session');
 const cookieSession = require('cookie-session')
 const passport = require('passport');
 require('./helpers/passport')
 
 const port = process.env.PORT || 3000;
 const app = express();
+
+app.use(cookieSession({
+  name: 'github-auth-session',
+  keys: ['key1', 'key2']
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+// app.get('/api-docs',(req,res)=>{
+// res.send(`Hello world ${req.user.displayName}`)
+//  })
+
 
 
 app
@@ -34,15 +46,6 @@ app
 
   //Auth Test
 
-  app.use(cookieSession({
-    name: 'github-auth-session',
-    keys: ['key1', 'key2']
-  }))
-  app.use(passport.initialize());
-  app.use(passport.session());
-  app.get('/',(req,res)=>{
-  res.send(`Hello world ${req.user.displayName}`)
-  })
 
 
   
