@@ -1,10 +1,16 @@
 const express = require('express');
+const axios = require('axios');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 const routes = require('./routes');
+const cookieSession = require('cookie-session')
+const passport = require('passport');
+require('./helpers/passport')
+
 const port = process.env.PORT || 3000;
 const app = express();
+
 
 app
   .use(bodyParser.json())
@@ -24,25 +30,40 @@ app
     console.log(process.stderr.fd, 'caught exception: ${err}\n' + 'Exception origin: ${origin}');
   });
 
+
+
   //Auth Test
-  app.get('/oauth-callback', ({ query: { code } }, res) => {
-    const body = {
-      client_id: process.env.GITHUB_CLIENT_ID,
-      client_secret: process.env.GITHUB_SECRET,
-      code,
-    };
-    const opts = { headers: { accept: 'application/json' } };
-    axios
-      .post('https://github.com/login/oauth/access_token', body, opts)
-      .then((_res) => _res.data.access_token)
-      .then((token) => {
-        // eslint-disable-next-line no-console
-        console.log('My token:', token);
+
+  app.use(cookieSession({
+    name: 'github-auth-session',
+    keys: ['key1', 'key2']
+  }))
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.get('/',(req,res)=>{
+  res.send(`Hello world ${req.user.displayName}`)
+  })
+
+
   
-        res.redirect(`/?token=${token}`);
-      })
-      .catch((err) => res.status(500).json({ err: err.message }));
-  });
+  // app.get('/oauth-callback', ({ query: { code } }, res) => {
+  //   const body = {
+  //     client_id: process.env.GITHUB_CLIENT_ID,
+  //     client_secret: process.env.GITHUB_SECRET,
+  //     code,
+  //   };
+  //   const opts = { headers: { accept: 'application/json' } };
+  //   axios
+  //     .post('https://github.com/login/oauth/access_token', body, opts)
+  //     .then((_res) => _res.data.access_token)
+  //     .then((token) => {
+  //       // eslint-disable-next-line no-console
+  //       console.log('My token:', token);
+  
+  //       res.redirect(`/api-docs?token=${token}`);
+  //     })
+  //     .catch((err) => res.status(500).json({ err: err.message }));
+  // });
 
 
 mongodb.initDb((err, mongodb) => {
