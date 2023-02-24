@@ -13,7 +13,8 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    callbackURL: "http://localhost:3000/oauth-callback"
+    callbackURL: "https://cse341-project2-zacht.onrender.com/oauth-callback"
+    // callbackURL: "http://localhost:3000/oauth-callback"
   },
   function(accessToken, refreshToken, profile, done) {
     return done(null, profile);
