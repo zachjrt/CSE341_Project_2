@@ -10,11 +10,11 @@
   "tags": [
     {
       "name": "Workers",
-      "description": "requests related to workers"
+      "description": "requests related to workers (Requires Log in to access)"
     },
     {
       "name": "Work Requests",
-      "description": "requests related to work requests"
+      "description": "requests related to work requests (Requires Log in to access)"
     }
   ],
   "schemes": [
@@ -23,11 +23,40 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "Route that brings you to the Swagger docs (Requires Log in to access)",
         "parameters": [],
         "responses": {}
       }
     },
+    "/auth": {
+      "get": {
+        "description": "Sends the authorization request to Github",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/": {
+      "get": {
+        "description": "Sends the to a log in page and prompts them to log in",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/oauth-callback": {
+      "get": {
+        "description": "callback used by github",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/error": {
+      "get": {
+        "description": "Throws an error if authentication fails",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    
     "/requests/": {
       "get": {
         "tags": ["Work Requests"],
