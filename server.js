@@ -22,6 +22,11 @@ app.use(passport.session());
 // res.send(`Hello world ${req.user.displayName}`)
 //  })
 
+app.get('/logout', (req, res) => {
+  req.session = null;
+  req.logout();
+  res.redirect('/');
+})
 
 
 app

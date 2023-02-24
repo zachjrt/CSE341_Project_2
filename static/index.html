@@ -4,67 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Github OAuth</title>
+    <title>Maintenance Portal - Log in</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Arvo&family=Kumbh+Sans&display=swap"
       rel="stylesheet"
     />
 
+    <!--CSS and most of the basics of the log in page are based heavily on Daniel Bark's implementation/code (https://www.youtube.com/watch?v=PdFdd4N6LtI)-->
     <style>
+  /* Elements */
       body {
   height: 100vh;
   margin: 0;
+  justify-content: center;
+  align-items: center;
+  background: rgb(41, 21, 119);
+  background: linear-gradient(0deg, rgb(84, 80, 211) 0%, rgb(2, 35, 58) 100%);
   color: #222;
   font-family: 'Kumbh Sans', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(71, 43, 186);
-  background: linear-gradient(0deg, rgba(71, 43, 186, 1) 0%, rgba(44, 25, 121, 1) 100%);
-}
-
-.content {
-  background: white;
-  width: 380px;
-  height: 480px;
-  border-radius: 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 3px 16px #222;
-}
-
-.content-bottom {
-  margin: 10px 0;
 }
 
 h1 {
-  font-family: 'Arvo', serif;
-  font-size: 26px;
   margin: 32px auto 24px;
   line-height: 40px;
-}
-
-.img-github {
-  margin-top: 32px;
-  width: 160px;
-  height: 160px;
-}
-
-.btn {
-  text-decoration: none;
-  display: block;
-  width: 220px;
-  line-height: 38px;
-  padding-top: 2px;
-  border-radius: 20px;
-  color: white;
-  background: rgba(71, 43, 186, 1);
-  margin: 0 auto;
-  border: none;
-  font-size: 14px;
+  font-family: 'Arvo', serif;
+  font-size: 26px;
 }
 
 input[type='text'] {
@@ -72,6 +37,46 @@ input[type='text'] {
   line-height: 32px;
   margin-bottom: 12px;
   padding-left: 12px;
+}
+
+/* Classes */
+.content {
+  background: white;
+  width: 380px;
+  height: 480px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 16px #222;
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+
+}
+
+.content-bottom {
+  margin: 10px 0;
+}
+
+.img-github {
+  width: 160px;
+  height: 160px;
+  margin-top: 32px;
+
+}
+
+.btn {
+  text-decoration: none;
+  display: block;
+  color: white;
+  background: rgb(28, 73, 164);
+  margin: 0 auto;
+  border: none;
+  width: 220px;
+  line-height: 38px;
+  padding-top: 2px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 .sign-in-text {
@@ -90,19 +95,14 @@ input[type='text'] {
   <body>
     <div class="content unauthorized">
       <div class="top">
-        <img class="img-github" src="github.png" />
-        <h1>Happy to see you<br />newcomer 👋</h1>
+        <img class="img-github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github Logo" />
+        <h1>Welcome to the site<br /> 👋</h1>
       </div>
       <div class="content-bottom">
         <a class="btn" href="/auth">SIGN IN WITH GITHUB</a>
         <p class="sign-in-text">in order to get started</p>
       </div>
     </div>
-    <div class="content authorized" style="display: none">
-      <div class="top">
-        <img class="img-github" src="github.png" />
-        <h1><span class="party-popper">🎉</span><br />Awesome!<br />You're authorized 🔒</h1>
-      </div>
-    </div>
+  
   </body>
 </html>
